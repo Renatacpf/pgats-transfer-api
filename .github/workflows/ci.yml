@@ -21,8 +21,9 @@ jobs:
           echo "PORT=4010" > .env
           echo "JWT_SECRET=supersecret" >> .env
           nohup npm start >/dev/null 2>&1 &
+          nohup node src/graphql/server.js >/dev/null 2>&1 &
           for i in {1..30}; do
-            curl -sf http://localhost:4010/docs && break
+            curl -sf http://localhost:4010/docs && curl -sf http://localhost:4020/graphql && break
             sleep 1
           done
           npm run test
