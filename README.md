@@ -1,13 +1,14 @@
 
+
 # PGATS Transfer API
 
 API REST e GraphQL para gerenciamento de usuários e transferências, com autenticação JWT, documentação Swagger, testes automatizados e CI.
 
 ## Endpoints REST
 - `/auth/login` - Autenticação (JWT)
-- `/users` - Listar/criar usuários
+- `/users` - Listar/criar usuários (criação não exige autenticação)
 - `/transfers` - Listar/criar transferências
-- Autenticação via header `Authorization: Bearer <token>`
+- Autenticação via header `Authorization: Bearer <token>` (exceto POST /users)
 
 ## GraphQL
 - Endpoint: `/graphql` (porta 4020)
@@ -17,6 +18,8 @@ API REST e GraphQL para gerenciamento de usuários e transferências, com autent
 
 ## Documentação Swagger
 - Acesse em: `http://localhost:4010/docs`
+- Se alterações não aparecerem, reinicie o servidor e limpe o cache do navegador.
+- O endpoint POST /users não exibe mais o cadeado de autenticação.
 
 ## Testes
 - Execute todos os testes: `npm test`
