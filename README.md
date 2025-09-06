@@ -24,6 +24,7 @@ API REST e GraphQL para gerenciamento de usuários e transferências, com autent
 ## Testes
 - Execute todos os testes: `npm test`
 - Relatório Allure: `npm run allure:generate` e `npm run allure:open`
+- Relatório visual online: [Allure Report - GitHub Pages](https://renatacpf.github.io/pgats-transfer-api/)
 
 ## CI
 - Pipeline GitHub Actions já configurado em `.github/workflows/ci.yml`
